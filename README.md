@@ -1,4 +1,4 @@
-*Nome a decidir*
+# Seleto - Seleção de Fotos Online
 
 ## Equipe
 Arthur Herbert Silva Melo
