@@ -15,7 +15,7 @@ Usaremos AWS como infraestrutura, seguindo a arquitetura abaixo:
 
 ![PDS Architecture](https://user-images.githubusercontent.com/26313549/137907219-0859d05c-f41f-485b-a099-eddfdd200933.png)
 
-Backlog Produto
+## Backlog Produto
 
 - Como fotógrafo, eu quero criar álbuns
 - Como fotógrafo, eu quero fazer upload de fotos
@@ -33,7 +33,7 @@ Backlog Produto
 - Preparar banco de dados (RDS AWS + Entidades)
 - Preparar camada de autenticação
 
-Sprint 1
+### Sprint 1
 
 	- História: Criar arquitetura front-end
 	- Tarefas: 
