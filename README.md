@@ -35,18 +35,11 @@ Usaremos AWS como infraestrutura, seguindo a arquitetura abaixo:
 
 ### Sprint 1
 
-	- História: Criar arquitetura front-end
-	- Tarefas: 
+	- Tarefas Técnicas
 		- Preparar ambiente da AWS [Arthur] 
 		- Preparar ambiente de desenvolvimento (VSCode, Dependências, Lint) [Júlia]
-		
-	- História: Criar arquitetura back-end
-	- Tarefas: 
 		- Preparar ambiente da AWS [Arthur]
 		- Preparar ambiente de desenvolvimento (VSCode, Dependências, Lint) [Vitor]
-		
-	- História: Instalar banco de dados, projetar e criar tabelas
-	- Tarefas: 
 		- Preparar ambiente da AWS [Arthur]
 		- Discutir e criar esquema do banco de dados [Arthur, Júlia, Vitor, Igor] 
 		
