@@ -2,7 +2,7 @@ name: Build & Deploy to S3
 on: [push]
 
 jobs:
-  build-and-copy-files:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
