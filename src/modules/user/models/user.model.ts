@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/record.model';
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Photo } from 'src/modules/photo/models/photo.model';
 
 export enum UserType {
   CUSTOMER = 'CUSTOMER',
@@ -33,4 +34,8 @@ export class User extends BaseEntity {
     default: UserType.CUSTOMER,
   })
   type: UserType;
+
+  @ManyToMany(() => Photo)
+  @JoinTable()
+  selectedPhotos: Photo[];
 }
