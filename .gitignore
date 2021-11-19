@@ -36,5 +36,4 @@ lerna-debug.log*
 
 # Environment
 .env
-
 *.zip
