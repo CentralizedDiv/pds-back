@@ -10,7 +10,7 @@ export const config: TypeOrmModuleOptions = {
   entities: ['dist/**/*.model.js'],
   migrations: ['dist/migrations/**/*.js'],
   cli: {
-    migrationsDir: 'src/migrations',
+    migrationsDir: 'migrations',
   },
   synchronize: false,
 };
