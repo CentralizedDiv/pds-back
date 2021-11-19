@@ -7,8 +7,8 @@ export const config: TypeOrmModuleOptions = {
   username: process.env.RDS_USER,
   password: process.env.RDS_PASSWORD,
   database: 'pds-database',
-  entities: ['dist/**/*.model.js'],
-  migrations: ['dist/migrations/**/*.js'],
+  entities: ['src/**/*.model.ts'],
+  migrations: ['migrations/**/*.ts'],
   cli: {
     migrationsDir: 'migrations',
   },
