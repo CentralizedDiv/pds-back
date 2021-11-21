@@ -1,7 +1,7 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class AlterTables1637517516055 implements MigrationInterface {
-    name = 'AlterTables1637517516055'
+export class AlterTables1637517884617 implements MigrationInterface {
+    name = 'AlterTables1637517884617'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`ALTER TABLE \`user\` DROP COLUMN \`name2\``);
@@ -17,7 +17,7 @@ export class AlterTables1637517516055 implements MigrationInterface {
         await queryRunner.query(`ALTER TABLE \`album\` ADD \`numberOfContractedPhotos\` int NOT NULL`);
         await queryRunner.query(`ALTER TABLE \`album\` ADD \`selectionDeadline\` varchar(255) NOT NULL`);
         await queryRunner.query(`ALTER TABLE \`album\` ADD \`allowDownload\` tinyint NOT NULL`);
-        await queryRunner.query(`ALTER TABLE \`album\` ADD \`watermark\` tinyint NOT NULL`);
+        await queryRunner.query(`ALTER TABLE \`album\` ADD \`showWatermark\` tinyint NOT NULL`);
         await queryRunner.query(`ALTER TABLE \`user\` DROP COLUMN \`type\``);
         await queryRunner.query(`ALTER TABLE \`user\` ADD \`type\` varchar(255) NOT NULL`);
         await queryRunner.query(`CREATE INDEX \`IDX_31ef2b4d30675d0c15056b7f6e\` ON \`user\` (\`type\`)`);
@@ -35,7 +35,7 @@ export class AlterTables1637517516055 implements MigrationInterface {
         await queryRunner.query(`DROP INDEX \`IDX_31ef2b4d30675d0c15056b7f6e\` ON \`user\``);
         await queryRunner.query(`ALTER TABLE \`user\` DROP COLUMN \`type\``);
         await queryRunner.query(`ALTER TABLE \`user\` ADD \`type\` enum ('CUSTOMER', 'PHOTOGRAPHER') NOT NULL DEFAULT 'CUSTOMER'`);
-        await queryRunner.query(`ALTER TABLE \`album\` DROP COLUMN \`watermark\``);
+        await queryRunner.query(`ALTER TABLE \`album\` DROP COLUMN \`showWatermark\``);
         await queryRunner.query(`ALTER TABLE \`album\` DROP COLUMN \`allowDownload\``);
         await queryRunner.query(`ALTER TABLE \`album\` DROP COLUMN \`selectionDeadline\``);
         await queryRunner.query(`ALTER TABLE \`album\` DROP COLUMN \`numberOfContractedPhotos\``);
