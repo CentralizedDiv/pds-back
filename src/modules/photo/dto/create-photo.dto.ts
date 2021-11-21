@@ -12,4 +12,7 @@ export class CreatePhotoDto {
 
   @ApiProperty()
   isSelected: boolean;
+
+  @ApiProperty()
+  albumId: string;
 }
