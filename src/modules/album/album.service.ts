@@ -15,6 +15,10 @@ export class AlbumService {
     return await this.albumRepository.findOne(id);
   }
 
+  async findAll() {
+    return await this.albumRepository.find();
+  }
+
   async createAlbum(album: CreateAlbumDto) {
     return await this.albumRepository.save(album);
   }
