@@ -13,7 +13,7 @@ export class Album extends BaseEntity {
     numberOfContractedPhotos: number;
     selectionDeadline: string;
     allowDownload: boolean;
-    watermark: boolean;
+    showWatermark: boolean;
   }) {
     super();
 
@@ -23,7 +23,7 @@ export class Album extends BaseEntity {
     this.numberOfContractedPhotos = initial?.numberOfContractedPhotos;
     this.selectionDeadline = initial?.selectionDeadline;
     this.allowDownload = initial?.allowDownload;
-    this.watermark = initial?.watermark;
+    this.showWatermark = initial?.showWatermark;
   }
 
   @ApiProperty()
@@ -54,7 +54,7 @@ export class Album extends BaseEntity {
 
   @ApiProperty()
   @Column()
-  watermark: boolean;
+  showWatermark: boolean;
 
   @OneToMany(() => Photo, (photo) => photo.album)
   photos: Photo[];
