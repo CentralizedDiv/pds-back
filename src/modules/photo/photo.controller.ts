@@ -10,7 +10,7 @@ import {
 import { PhotoService } from './photo.service';
 import { CreatePhotoDto } from './dto/create-photo.dto';
 
-@Controller()
+@Controller('photo')
 export class PhotoController {
   constructor(private readonly photoService: PhotoService) {}
 
