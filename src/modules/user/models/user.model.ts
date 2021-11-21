@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/record.model';
-import { Entity, Column, TableInheritance } from 'typeorm';
+import { Entity, Column, TableInheritance, OneToMany } from 'typeorm';
+import { Comment } from 'src/modules/comment/models/comment.model';
 
 @Entity({ name: 'user' })
 @TableInheritance({ column: { type: 'varchar', name: 'type' } })
@@ -20,4 +21,7 @@ export class User extends BaseEntity {
     unique: true,
   })
   email: string;
+
+  @OneToMany(() => Comment, (comment) => comment.createdBy)
+  comments: Comment[];
 }
