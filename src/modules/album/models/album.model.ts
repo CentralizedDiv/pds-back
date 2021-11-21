@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/record.model';
-import { Entity, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, OneToMany } from 'typeorm';
 import { Photo } from 'src/modules/photo/models/photo.model';
 
 @Entity({ name: 'album' })
@@ -27,7 +27,6 @@ export class Album extends BaseEntity {
   @Column()
   extraPhotos: boolean;
 
-  @ManyToMany(() => Photo)
-  @JoinTable()
+  @OneToMany(() => Photo, (photo) => photo.album)
   photos: Photo[];
 }

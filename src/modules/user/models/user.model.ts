@@ -1,20 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/record.model';
-import { Entity, Column, ManyToMany, JoinTable } from 'typeorm';
-import { Photo } from 'src/modules/photo/models/photo.model';
-
-export enum UserType {
-  CUSTOMER = 'CUSTOMER',
-  PHOTOGRAPHER = 'PHOTOGRAPHER',
-}
+import { Entity, Column, TableInheritance } from 'typeorm';
 
 @Entity({ name: 'user' })
+@TableInheritance({ column: { type: 'varchar', name: 'type' } })
 export class User extends BaseEntity {
-  constructor(initial: { name: string; email: string; type: UserType }) {
+  constructor(initial: { name: string; email: string }) {
     super();
 
     this.email = initial?.email;
-    this.type = initial?.type;
   }
 
   @ApiProperty()
@@ -26,16 +20,4 @@ export class User extends BaseEntity {
     unique: true,
   })
   email: string;
-
-  @ApiProperty({ enum: UserType, isArray: true })
-  @Column({
-    type: 'enum',
-    enum: UserType,
-    default: UserType.CUSTOMER,
-  })
-  type: UserType;
-
-  @ManyToMany(() => Photo)
-  @JoinTable()
-  selectedPhotos: Photo[];
 }
