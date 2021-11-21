@@ -42,9 +42,6 @@ export class Photo extends BaseEntity {
   })
   isSelected: boolean;
 
-  @Column()
-  albumId: string;
-
   @ManyToOne(() => Album, (album) => album.photos)
   album: Album;
 
