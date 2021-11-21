@@ -4,10 +4,9 @@ import { config } from 'ormconfig';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PhotoModule } from './modules/photo/photo.module';
-import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), PhotoModule, ConfigModule.forRoot()],
+  imports: [TypeOrmModule.forRoot(config), PhotoModule],
   controllers: [AppController],
   providers: [AppService],
 })
