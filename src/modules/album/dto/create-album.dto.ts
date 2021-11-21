@@ -1,16 +1,22 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { Comment } from 'src/modules/comment/models/comment.model';
 import { Photo } from 'src/modules/photo/models/photo.model';
 
 export class CreateAlbumDto {
-  @ApiProperty()
   name: string;
 
-  @ApiProperty()
   url: string;
 
-  @ApiProperty()
-  extraPhotos: boolean;
+  allowAdditionalPhotos: boolean;
 
-  @ApiProperty()
+  numberOfContractedPhotos: number;
+
+  selectionDeadline: string;
+
+  allowDownload: boolean;
+
+  showWatermark: boolean;
+
+  comments: Comment[];
+
   photos: Photo[];
 }
