@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from 'src/common/record.model';
-import { Entity, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, Column, OneToMany, ManyToOne } from 'typeorm';
+import { Album } from 'src/modules/album/models/album.model';
 import { Comment } from 'src/modules/comment/models/comment.model';
 
 @Entity({ name: 'photo' })
@@ -9,14 +10,14 @@ export class Photo extends BaseEntity {
     name: string;
     url: string;
     isCover: boolean;
-    isWaterMark: boolean;
+    isSelected: boolean;
   }) {
     super();
 
     this.name = initial?.name;
     this.url = initial?.url;
     this.isCover = initial?.isCover;
-    this.isWaterMark = initial?.isWaterMark;
+    this.isSelected = initial?.isSelected;
   }
 
   @ApiProperty()
@@ -39,9 +40,11 @@ export class Photo extends BaseEntity {
   @Column({
     default: false,
   })
-  isWaterMark: boolean;
+  isSelected: boolean;
 
-  @ManyToMany(() => Comment)
-  @JoinTable()
+  @ManyToOne(() => Album, (album) => album.photos)
+  album: Album;
+
+  @OneToMany(() => Comment, (comment) => comment.photo)
   comments: Comment[];
 }
