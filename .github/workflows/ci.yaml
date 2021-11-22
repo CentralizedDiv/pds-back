@@ -26,6 +26,9 @@ jobs:
       - name: Copy Procfile
         run: cp Procfile dist/Procfile
 
+      - name: Copy nginx conf
+        run: cp .ebextensions/nginx/conf.d/proxy.conf dist/.ebextensions/nginx/conf.d/proxy.conf
+
       - name: Zip files
         run: |
           sudo apt-get update -qy
