@@ -27,7 +27,7 @@ jobs:
         run: cp Procfile dist/Procfile
 
       - name: Copy nginx conf
-        run: mkdir -p ./dist/.ebextensions/nginx/conf.d && cp .ebextensions/nginx/conf.d/proxy.conf $_
+        run: mkdir -p ./dist/.platform/nginx/conf.d && cp .platform/nginx/conf.d/proxy.conf $_
 
       - name: Zip files
         run: |
