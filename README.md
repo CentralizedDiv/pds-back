@@ -61,3 +61,34 @@ Usaremos AWS como infraestrutura, seguindo a arquitetura abaixo:
 		- Criar e testar rota para remover as fotos [Vitor]
 		- Criar e testar rota para buscar as fotos [Igor]
 		- Criar e testar camada de autenticação [Igor]
+
+### Sprint 2
+
+    - Tarefas Técnicas
+    	- Criar testes unitários front-end [Júlia]
+    	- Criar testes unitários back-end [Igor]
+        
+    - História: Como fotógrafo, eu quero fazer upload de fotos
+    - Tarefas:
+    	- Implementar e testar mecanismo de marca d'água nas fotos [Júlia]
+    	- Criar e testar comunicação com o S3 [Vitor]
+    	- Criar e testar camada de autenticação [Igor]
+        
+    - História: Como fotógrafo, eu quero convidar clientes para ver, comentar e escolher fotos dentro dos álbuns
+    - Tarefas:
+    	- Criar interface web para convidar cliente [Arthur]
+        - Criar interface web para comentar fotos [Júlia]
+        - Criar interface web para selecionar fotos [Arthur]
+    	- Criar e testar rota para comentar fotos [Vitor]
+    	- Criar e testar rota para escolher fotos [Igor]
+    	- Criar e testar rota para convidar cliente [Vitor]
+
+    - História: Como fotógrafo, eu quero filtrar as fotos de um álbum (escolhidas, comentadas, etc)
+    - Tarefas:
+    	- Projetar e testar a interface web [Arthur]
+    	- Criar e testar rota para filtrar as fotos [Igor]
+        
+    - História: Como fotógrafo, eu quero gerar um link com as fotos finais do cliente
+    - Tarefas:
+    	- Projetar e testar a interface web [Júlia]
+    	- Criar e testar rota para gerar link [Vitor]
