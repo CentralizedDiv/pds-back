@@ -37,7 +37,7 @@ export class PhotoController {
   @UseInterceptors(FileInterceptor('file'))
   @HttpCode(201)
   async upload(@UploadedFile() file: Express.Multer.File) {
-    console.log(file);
+    return this.photoService.upload(file);
   }
 
   @Delete(':id')
