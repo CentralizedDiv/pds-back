@@ -26,12 +26,12 @@ export class CommentController {
 
   @Post()
   @HttpCode(201)
-  async createComment(@Body() createCommentDto: CreateCommentDto) {
-    return this.commentService.createComment(createCommentDto);
+  async create(@Body() createComment: CreateCommentDto) {
+    return this.commentService.create(createComment);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.commentService.deleteAlbum(id);
+    return this.commentService.delete(id);
   }
 }
