@@ -26,8 +26,13 @@ export class CommentController {
 
   @Post()
   @HttpCode(201)
+<<<<<<< HEAD
   async create(@Body() createComment: CreateCommentDto) {
     return this.commentService.create(createComment);
+=======
+  async create(@Body() createCommentDto: CreateCommentDto) {
+    return this.commentService.create(createCommentDto);
+>>>>>>> c7b5342 (Criando rota de comentário e usuário)
   }
 
   @Delete(':id')
