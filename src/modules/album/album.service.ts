@@ -12,11 +12,14 @@ export class AlbumService {
   ) {}
 
   async findById(id: string) {
-    return await this.albumRepository.findOne(id);
+    return await this.albumRepository.findOne({
+      where: { id: id },
+      relations: ['photos'],
+    });
   }
 
   async findAll() {
-    return await this.albumRepository.find();
+    return await this.albumRepository.find({ relations: ['photos'] });
   }
 
   async createAlbum(album: CreateAlbumDto) {
