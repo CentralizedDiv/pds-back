@@ -19,7 +19,7 @@ export class AlbumService {
     return await this.albumRepository.find();
   }
 
-  async createAlbum(album: CreateAlbumDto) {
+  async create(album: CreateAlbumDto) {
     return await this.albumRepository.save(album);
   }
 
@@ -27,7 +27,7 @@ export class AlbumService {
     return await this.albumRepository.update(id, album);
   }
 
-  async deleteAlbum(id: string) {
+  async delete(id: string) {
     return await this.albumRepository.delete(id);
   }
 }

@@ -26,8 +26,8 @@ export class CommentController {
 
   @Post()
   @HttpCode(201)
-  async create(@Body() createCommentDto: CreateCommentDto) {
-    return this.commentService.create(createCommentDto);
+  async create(@Body() createComment: CreateCommentDto) {
+    return this.commentService.create(createComment);
   }
 
   @Delete(':id')
