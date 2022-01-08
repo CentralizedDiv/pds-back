@@ -26,12 +26,12 @@ export class AlbumController {
 
   @Post()
   @HttpCode(201)
-  async createAlbum(@Body() createAlbumDto: CreateAlbumDto) {
-    return this.albumService.createAlbum(createAlbumDto);
+  async create(@Body() createAlbum: CreateAlbumDto) {
+    return this.albumService.create(createAlbum);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.albumService.deleteAlbum(id);
+    return this.albumService.delete(id);
   }
 }

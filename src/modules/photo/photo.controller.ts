@@ -29,8 +29,8 @@ export class PhotoController {
 
   @Post()
   @HttpCode(201)
-  async create(@Body() createPhotoDto: CreatePhotoDto) {
-    return this.photoService.create(createPhotoDto);
+  async create(@Body() createPhoto: CreatePhotoDto) {
+    return this.photoService.create(createPhoto);
   }
 
   @Post('upload')
