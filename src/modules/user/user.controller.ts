@@ -55,8 +55,8 @@ export class UserController {
 
   @Post()
   @HttpCode(201)
-  async create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+  async create(@Body() createUser: CreateUserDto) {
+    return this.userService.create(createUser);
   }
 >>>>>>> 15e2988 (Criando rota post para usuario)
 }
