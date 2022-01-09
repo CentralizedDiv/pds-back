@@ -31,6 +31,6 @@ export class AlbumService {
   }
 
   async delete(id: string) {
-    return await this.albumRepository.delete(id);
+    return await this.albumRepository.softDelete(id);
   }
 }
