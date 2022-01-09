@@ -7,11 +7,10 @@ import { User } from 'src/modules/user/models/user.model';
 
 @Entity({ name: 'comment' })
 export class Comment extends BaseEntity {
-  constructor(initial: { description: string; createdBy: User }) {
+  constructor(initial: { description: string }) {
     super();
 
     this.description = initial?.description;
-    this.createdBy = initial?.createdBy;
   }
 
   @ApiProperty()

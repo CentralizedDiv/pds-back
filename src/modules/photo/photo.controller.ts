@@ -29,8 +29,8 @@ export class PhotoController {
 
   @Post()
   @HttpCode(201)
-  async create(@Body() createPhotoDto: CreatePhotoDto) {
-    return this.photoService.create(createPhotoDto);
+  async create(@Body() createPhoto: CreatePhotoDto) {
+    return this.photoService.create(createPhoto);
   }
 
   @Post('upload')
@@ -41,7 +41,7 @@ export class PhotoController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  delete(@Param('id') id: string) {
     return this.photoService.delete(id);
   }
 }
