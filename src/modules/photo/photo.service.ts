@@ -34,6 +34,6 @@ export class PhotoService {
   }
 
   async delete(id: string) {
-    return await this.photoRepository.delete(id);
+    return await this.photoRepository.softDelete(id);
   }
 }
