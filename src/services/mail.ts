@@ -10,16 +10,13 @@ class Mail {
 
   sendMail() {
     const mailOptions = {
-      from: 'portalband@band.com.br',
       to: this.to,
       subject: this.subject,
       html: this.message,
     };
 
     const transporter = nodemailer.createTransport({
-      host: config.host,
-      port: config.port,
-      secure: false,
+      service: config.service,
       auth: {
         user: config.user,
         pass: config.password,
