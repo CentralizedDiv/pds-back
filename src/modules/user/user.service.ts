@@ -19,7 +19,7 @@ export class UserService {
   }
 
   async delete(id: string) {
-    return await this.userRepository.delete(id);
+    return await this.userRepository.softDelete(id);
   }
   async create(user: CreateUserDto) {
     return await this.userRepository.save(user);

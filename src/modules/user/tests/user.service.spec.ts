@@ -1,54 +1,48 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { repositoryMockFactory } from 'src/utils/testing-utils';
-import { AlbumController } from '../album.controller';
-import { AlbumService } from '../album.service';
-import { Album } from '../models/album.model';
+import { UserController } from '../user.controller';
+import { UserService } from '../user.service';
+import { User } from '../models/user.model';
 
-describe('AlbumService', () => {
-  let service: AlbumService;
-  const entity: Album = {
-    id: 'eb4d3654-b7d9-4ada-8d8b-de8fa71c2365',
-    name: 'Festa',
-    url: 'festa.com',
-    numberOfContractedPhotos: 10,
-    selectionDeadline: '2022-10-10',
-    allowDownload: false,
-    showWatermark: true,
-    allowAdditionalPhotos: false,
+describe('UserService', () => {
+  let service: UserService;
+  const entity: User = {
+    name: 'Igor',
+    email: 'igor@teste.com',
     comments: [],
-    photos: [],
-    createdAt: '2022-01-02',
-    updatedAt: '2022-01-03',
+    id: 'eb4d3654-b7d9-4ada-8d8b-de8fa71c2365',
+    updatedAt: '2021-10-10',
+    createdAt: '2021-08-10',
   };
 
   beforeEach(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
-      controllers: [AlbumController],
+      controllers: [UserController],
       providers: [
-        AlbumService,
+        UserService,
         {
-          provide: getRepositoryToken(Album),
+          provide: getRepositoryToken(User),
           useFactory: repositoryMockFactory(entity),
         },
       ],
     }).compile();
 
-    service = moduleRef.get<AlbumService>(AlbumService);
+    service = moduleRef.get<UserService>(UserService);
   });
 
   describe('findAll', () => {
-    it('should return an array of albums', async () => {
+    it('should return an array of users', async () => {
       expect(await service.findAll()).toStrictEqual([entity]);
     });
   });
 
   describe('findById', () => {
-    it('should return a album', async () => {
-      //expect(await service.findById(entity.id)).toStrictEqual(entity);
+    it('should return a user', async () => {
+      //expect(await albumService.findById(entity.id)).toStrictEqual(entity);
     });
 
-    it('should return undefined on an non-existing entity', async () => {
+    it('should return undefined on an non-existing user', async () => {
       expect(await service.findById('10')).toBe(undefined);
     });
   });
