@@ -92,3 +92,26 @@ Usaremos AWS como infraestrutura, seguindo a arquitetura abaixo:
     - Tarefas:
     	- Projetar e testar a interface web [Júlia]
     	- Criar e testar rota para gerar link [Vitor]
+
+### Sprint 3
+
+    - Tarefas Técnicas
+        - Criar testes de integração [Igor e Vitor]
+        - Criar testes de interface [Arthur e Júlia]
+        - Reabilitar a integração contínua com a AWS [Arthur]
+        
+    - História: Como cliente, eu quero visualizar um álbum com minhas fotos.
+    - Tarefas:
+        - Implementar e testar visão de cliente da tela de álbum [Júlia]
+        - [Técnica] Integrar a busca do álbum pelo link com o backend [Júlia e Igor]
+        
+    - História: Como cliente, eu quero pré-selecionar fotos, comentar e marcá-las como favorita.
+    - Tarefas:
+        - Implemntar e testar interfaces de comentário e marcar como favorito [Arthur]
+        - [Técnica] Integrar as ações de comentar e favoritar com o backend. [Arthur e Igor]
+
+    - História: Como cliente, eu quero receber um link com todas as minhas fotos selecionadas.
+    - Tarefas:
+        - Implementar e testar interface do e-mail de recebimento do link. [Júlia]
+        - Implementar e testar interface de envio do link. [Júlia]
+        - [Técnica] Integrar a ação de enviar o e-mail com o backend. [Júlia e Vitor]
